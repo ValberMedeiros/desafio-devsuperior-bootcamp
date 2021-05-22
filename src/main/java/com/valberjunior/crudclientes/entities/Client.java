@@ -1,5 +1,7 @@
 package com.valberjunior.crudclientes.entities;
 
+import com.valberjunior.crudclientes.dto.ClientDTO;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,6 +37,15 @@ public class Client implements Serializable {
         this.income = income;
         this.birthDate = birthDate;
         this.children = children;
+    }
+
+    public Client(ClientDTO dto) {
+        this.id = dto.getId();
+        this.name = dto.getName();
+        this.cpf = dto.getCpf();
+        this.income = dto.getIncome();
+        this.birthDate = dto.getBirthDate();
+        this.children = dto.getChildren();
     }
 
     public Long getId() {
